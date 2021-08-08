@@ -1,34 +1,18 @@
-package com.example.tvprogramsscanner.other;
+package com.example.tvprogramsscanner.other
 
-import com.example.tvprogramsscanner.service.RequestService;
+import com.example.tvprogramsscanner.service.RequestService
+import java.io.IOException
 
-import java.io.IOException;
+class MyRunnable(var requestService: RequestService, var serialNumber: String,
+    var borderId: Int, var direction: Int) : Runnable {
 
-public class MyRunnable implements Runnable {
+    var jsonResponseString: String? = null
 
-    RequestService requestService;
-    String serialNumber;
-    int borderId, direction;
-
-    String jsonResponseString = null;
-
-    public MyRunnable(RequestService service, String serialNumber, int borderId, int direction){
-        this.requestService = service;
-        this.serialNumber = serialNumber;
-        this.borderId = borderId;
-        this.direction = direction;
-    }
-
-    @Override
-    public void run() {
+    override fun run() {
         try {
-            requestService.makeRequest(serialNumber, borderId, direction);
-        } catch (IOException e) {
-            e.printStackTrace();
+            requestService.makeRequest(serialNumber, borderId, direction)
+        } catch (e: IOException) {
+            e.printStackTrace()
         }
-    }
-
-    public String getJsonResponseString() {
-        return jsonResponseString;
     }
 }
