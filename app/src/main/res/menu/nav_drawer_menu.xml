@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/ollTvHeader"
+        android:title="Oll.Tv"/>
+
+    <item android:id="@+id/channels"
+        android:title="Channels"/>
+
+    <item android:id="@+id/moviesSeries"
+        android:title="Movies and series"/>
+
+    <item android:id="@+id/programs"
+        android:title="Programs"/>
+
+    <item android:id="@+id/forChildren"
+        android:title="For children"/>
+
+    <item android:id="@+id/football"
+        android:title="Football"/>
+
+    <item android:id="@+id/profile"
+        android:title="Profile"/>
+
+</menu>
